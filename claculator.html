@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = +prompt("Enter 1st Number :- ")
+        var opt = prompt("Enter operator (+ , - , * , / , % ) :- ")
+        var num2 = +prompt("Enter 2nd Number :- ")
+        var answer ;
+        if (opt === "+") {
+            answer = num1 + num2
+            document.write("<h1>" + num1 + "  " + opt + "  " + num2 + "  =  " + answer + "</h1>")
+        }
+        else if (opt === "-") {
+            answer = num1 - num2
+            document.write("<h1>" + num1 + "  " + opt + "  " + num2 + "  =  " + answer + "</h1>")
+        }
+        else if (opt === "*") {
+            answer = num1 * num2
+            document.write("<h1>" + num1 + "  " + opt + "  " + num2 + "  =  " + answer + "</h1>")
+        }
+        else if (opt === "/") {
+            answer = num1 / num2
+            document.write("<h1>" + num1 + "  " + opt + "  " + num2 + "  =  " + answer + "</h1>")
+        }
+        else if (opt === "%") {
+            answer = num1 % num2
+            document.write("<h1>" + num1 + "  " + opt + "  " + num2 + "  =  " + answer + "</h1>")
+        }
+        else {
+            document.write("<h1 style='color:red'><em>Error !!!</em></h1> <h2>Enter Correct Number Or Operator </h2>")
+        }
+    </script>
+</body>
+</html>

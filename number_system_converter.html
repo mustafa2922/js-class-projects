@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // binary - octal
+
+        // binary - decimal
+
+        function b_d() {
+
+            var binary = prompt("Enter a number :- ")
+            var flag = false
+            var binary_parts;
+            var cond = true
+
+            for (var i = 0; i < binary.length; i++) {
+                if (binary[i] >= 2) {
+                    cond = false
+                }
+            }
+
+            if (cond == false) {
+                console.log("Invalid Literal For Base 2 (binary) ")
+            }
+            else {
+
+                for (var i = 0; i < binary.length; i++) {
+                    if (binary[i] == ".") {
+                        binary_parts = binary.split(".")
+                        flag = true
+                    }
+                }
+
+                var decimal = Number();
+
+                if (flag == true) {
+
+                    for (var i = binary_parts[0].length - 1; i >= 0; i--) {
+                        decimal += Number(binary_parts[0][i]) * (2 ** ((binary_parts[0].length - 1) - i))
+                    }
+
+                    for (var i = binary_parts[1].length - 1; i >= 0; i--) {
+                        decimal += Number(binary_parts[1][((binary_parts[1].length - 1) - i)]) * (2 ** (i - binary_parts[1].length))
+                    }
+                }
+                else {
+                    for (var i = binary.length - 1; i >= 0; i--) {
+                        decimal += Number(binary[i]) * (2 ** ((binary.length - 1) - i))
+                    }
+                }
+
+
+                console.log(decimal)
+
+            }
+        }
+
+        // b_d()
+
+        // binary - hex-adecimal
+
+
+        // octal - binary
+
+        // octal - decimal
+
+        function o_d() {
+            var octal = prompt("Enter a number :- ")
+            var flag = false
+            var octal_parts;
+            var cond = true
+
+            for (var i = 0; i < octal.length; i++) {
+                if (octal[i] >= 8) {
+                    cond = false
+                }
+            }
+
+            if (cond == false) {
+                console.log("Invalid Literal For Base 8 (octal) ")
+            }
+            else {
+
+                for (var i = 0; i < octal.length; i++) {
+                    if (octal[i] == ".") {
+                        octal_parts = octal.split(".")
+                        flag = true
+                    }
+                }
+
+                var decimal = Number();
+
+                if (flag == true) {
+
+                    for (var i = octal_parts[0].length - 1; i >= 0; i--) {
+                        decimal += Number(octal_parts[0][i]) * (8 ** ((octal_parts[0].length - 1) - i))
+                    }
+
+                    for (var i = octal_parts[1].length - 1; i >= 0; i--) {
+                        decimal += Number(octal_parts[1][((octal_parts[1].length - 1) - i)]) * (8 ** (i - octal_parts[1].length))
+                    }
+                }
+                else {
+                    for (var i = octal.length - 1; i >= 0; i--) {
+                        decimal += Number(octal[i]) * (8 ** ((octal.length - 1) - i))
+                    }
+                }
+
+
+                console.log(decimal)
+            }
+
+
+        }
+
+        // o_d()
+
+        // octal - hexa-decimal
+
+        // decimal - binary
+
+        function d_b() {
+            var decimal = prompt("Enter a number :- ")
+            var binary = ""
+            flag = true
+            for (var i = 0; i < decimal.length; i++) {
+                if (decimal[i] == ".") {
+                    decimal_parts = decimal.split(".")
+                    flag = false
+                }
+            }
+
+            if (flag == true) {
+                for (var i = decimal ; i > 0; i = Math.floor(i / 2)) {
+                    console.log(i,"-----------",(i)%2)
+                    binary = (i % 2 + binary  )
+                }
+            }
+
+            else {
+                for (var i = Number(decimal_parts[0]); i > 0; i = Math.floor(i / 2)) {
+                    binary = (i % 2) + binary 
+                }
+                binary += "."
+                decimal_parts[1] = "0." + decimal_parts[1]
+
+                for (var i = Number(decimal_parts[1]); i % 1 > 0; i = (i * 2) % 1) {
+                    binary = binary + ((i * 2) - (i * 2) % 1)
+                }
+            }
+
+            console.log(binary)
+
+        }
+
+        d_b()
+
+        // d_b()
+
+        // decimal - octal
+
+        // decimal - hexa-decimal
+
+
+        // hexa-decmal - binary
+
+        // hexa-decimal - octal
+
+        // hexa-decimal - decimal
+
+        function h_d() {
+
+            var hexa = prompt("Enter a number :- ")
+            var flag = false
+            var hexa_parts;
+            var cond = true
+
+
+            for (var i = 0; i < hexa.length; i++) {
+                if (hexa[i] == ".") {
+                    hexa_parts = hexa.split(".")
+                    flag = true
+                }
+            }
+
+            var decimal = Number();
+
+            if (flag == true) {
+
+                for (var i = hexa_parts[0].length - 1; i >= 0; i--) {
+                    if (hexa_parts[0][i] == "A") {
+                        decimal += (10) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                    else if (hexa_parts[0][i] == "B") {
+                        decimal += (11) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                    else if (hexa_parts[0][i] == "C") {
+                        decimal += (12) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                    else if (hexa_parts[0][i] == "D") {
+                        decimal += (13) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                    else if (hexa_parts[0][i] == "E") {
+                        decimal += (14) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                    else if (hexa_parts[0][i] == "F") {
+                        decimal += (15) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                    else {
+                        decimal += Number(hexa_parts[0][i]) * (16 ** ((hexa_parts[0].length - 1) - i))
+                    }
+                }
+
+                for (var i = hexa_parts[1].length - 1; i >= 0; i--) {
+                    if ((hexa_parts[1][((hexa_parts[1].length - 1) - i)]) == "A") {
+                        decimal += (10) * (16 ** (i - hexa_parts[1].length))
+                    }
+                    else if ((hexa_parts[1][((hexa_parts[1].length - 1) - i)]) == "B") {
+                        decimal += (11) * (16 ** (i - hexa_parts[1].length))
+                    }
+                    else if ((hexa_parts[1][((hexa_parts[1].length - 1) - i)]) == "C") {
+                        decimal += (12) * (16 ** (i - hexa_parts[1].length))
+                    }
+                    else if ((hexa_parts[1][((hexa_parts[1].length - 1) - i)]) == "D") {
+                        decimal += (13) * (16 ** (i - hexa_parts[1].length))
+                    }
+                    else if ((hexa_parts[1][((hexa_parts[1].length - 1) - i)]) == "E") {
+                        decimal += (14) * (16 ** (i - hexa_parts[1].length))
+                    }
+                    else if ((hexa_parts[1][((hexa_parts[1].length - 1) - i)]) == "F") {
+                        decimal += (15) * (16 ** (i - hexa_parts[1].length))
+                    }
+                    else {
+                        decimal += Number(hexa_parts[1][((hexa_parts[1].length - 1) - i)]) * (16 ** (i - hexa_parts[1].length))
+                    }
+                }
+            }
+            else {
+                for (var i = hexa.length - 1; i >= 0; i--) {
+
+                    if ((hexa[i]) == "A") {
+                        decimal += (10) * (16 ** ((hexa.length - 1) - i))
+                    }
+                    else if ((hexa[i]) == "B") {
+                        decimal += (11) * (16 ** ((hexa.length - 1) - i))
+                    }
+                    else if ((hexa[i]) == "C") {
+                        decimal += (12) * (16 ** ((hexa.length - 1) - i))
+                    }
+                    else if ((hexa[i]) == "D") {
+                        decimal += (13) * (16 ** ((hexa.length - 1) - i))
+                    }
+                    else if ((hexa[i]) == "E") {
+                        decimal += (14) * (16 ** ((hexa.length - 1) - i))
+                    }
+                    else if ((hexa[i]) == "F") {
+                        decimal += (15) * (16 ** ((hexa.length - 1) - i))
+                    }
+                    else {
+                        decimal += Number(hexa[i]) * (16 ** ((hexa.length - 1) - i))
+                    }
+                }
+            }
+
+
+            console.log(decimal)
+        }
+
+        // h_d()
+
+
+        // var decimal = prompt("Enter a number :- ", "0.635")
+        // var decimal_parts = decimal.split(".")
+        // var fraction_part = Number("0." + decimal_parts[1])
+        // var binary = ""
+
+        // for (var i = fraction_part; i % 1 > 0; i = (i * 2) % 1) {
+        //     console.log(i)
+        //     binary = binary + ((i * 2) - (i * 2) % 1)
+        // }
+
+
+        // console.log(binary)
+
+        
+
+    </script>
+</body>
+
+</html>

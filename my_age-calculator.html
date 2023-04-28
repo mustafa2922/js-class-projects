@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var birthdate = prompt("Enter Your Date Of Birth :- ","24 april 2005")
+
+        var currentDate = new Date()
+        var dateOfBirth = new Date(birthdate)
+
+        var ageInMs = currentDate.getTime() - dateOfBirth.getTime()
+
+        var ageInDays = ageInMs / (1000 * 60 * 60 * 24)
+
+        var ageInYears = Math.floor(ageInDays / 365.25)
+
+        var daysAfterYear = Math.round(ageInDays % 365.25)
+
+        var hoursAfterDay = Math.floor((ageInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        var minutesAfterHour = Math.floor((ageInMs % (1000 * 60 * 60)) / (1000 * 60))
+        var secondsAfterMinute = Math.floor((ageInMs % (1000 * 60)) / (1000))
+        var millisecondsAfterSecond = Math.floor((ageInMs % 1000))
+
+        console.log(`You are ${ageInYears} years, ${daysAfterYear} days, ${hoursAfterDay} hours, ${minutesAfterHour} minutes, ${secondsAfterMinute} seconds, and ${millisecondsAfterSecond} milliseconds old.`);
+
+
+
+    </script>
+</body>
+
+</html>

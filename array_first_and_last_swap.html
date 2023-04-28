@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = []
+        var len = +prompt("Enter  length  of  an  array :- ")
+        for (var i =  1 ; i <= len ; i++) {
+            if (i === 1) {
+                var input = prompt("Enter " + i + "st Element :- ")
+                arr.push(input)
+            }
+            else if (i === 2) {
+                var input = prompt("Enter " + i + "nd Element :- ")
+                arr.push(input)
+            }
+            else if (i === 3) {
+                var input = prompt("Enter " + i + "rd Element :- ")
+                arr.push(input)
+            }
+            else {
+                var input = prompt("Enter " + i + "th Element :- ")
+                arr.push(input)
+            }
+        }
+
+        console.log("Given Array :- ",arr)
+        arr[0] = [arr[arr.length-1] , arr[arr.length-1] = arr[0]] [0]
+        console.log("Swaped Array :- ",arr)
+    </script>
+</body>
+</html>

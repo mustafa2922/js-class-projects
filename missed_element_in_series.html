@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var myarr = []
+        var len = +prompt("Enter length of an array :- ")
+        for (var i = 1; i <= len; i++) {
+            if (i === 1) {
+                var input = +prompt("Enter " + i + "st Element :- ")
+                myarr.push(input)
+            }
+            else if (i === 2) {
+                var input = +prompt("Enter " + i + "nd Element :- ")
+                myarr.push(input)
+            }
+            else if (i === 3) {
+                var input = +prompt("Enter " + i + "rd Element :- ")
+                myarr.push(input)
+            }
+            else {
+                var input = +prompt("Enter " + i + "th Element :- ")
+                myarr.push(input)
+            }
+        }
+
+        console.log("GIVEN ARRAY :- ", myarr)
+
+        var flag = false
+
+        var count = myarr[0] - 1
+        for (var i = myarr[0]; i <= myarr[myarr.length - 1]; i++) {
+            count += 1
+
+            if (i !== myarr[i - myarr[0]]) {
+                console.log("============ ", i, " is missnig !! ==================")
+                myarr.splice(i - myarr[0], 0, i)
+                flag = true
+            }
+        }
+
+        if (flag == false ) {
+            console.log("NOTHING IS MISSING :) ")
+        }
+        else {
+            console.log("CORRECT SERIES IS :- ",myarr)
+        }
+    </script>
+</body>
+
+</html>
